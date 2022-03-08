@@ -3,26 +3,34 @@ package com.zerobase.lms;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.zerobase.lms.member.component.MailComponent;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @Controller
 public class MainController {
 
-    //매핑하기 위해 만든 클래스
-    //주소(논리적 인터넷 주소)와 물리적인 파일을 매핑
+	private final MailComponent mailComponent;
 
-    //하나의 주소에 대해서 어디서 누가 매핑??
-    //후보: 클래스, 속성, 메소드 중 메소드가 적합
+	@RequestMapping("/")
+	public String index() {
 
 
-    @RequestMapping("/")
-    public String index() {
-        return "index";
+		
+String email = "knyhwhw@naver.com";
+String subject = "안녕하세요 제로베이스입니다";
+String text = "<p>안녕하세요</p> <p>반갑습미다</p>";
 
-        //request 는 웹에서 서버로
-        //response는 서버에서 웹으로
-    }
+mailComponent.sendMail(email, subject, text);
+		return "index";
+		// request �뒗 �쎒�뿉�꽌 �꽌踰꾨줈
+		// response�뒗 �꽌踰꾩뿉�꽌 �쎒�쑝濡�
+	}
 
-   // @RequestMapping("/hello")
-    //public String hello(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	// @RequestMapping("/hello")
+	// public String hello(HttpServletRequest request, HttpServletResponse response)
+	// throws IOException {
 //
 //        PrintWriter printWriter = response.getWriter();
 //
@@ -34,12 +42,11 @@ public class MainController {
 //                "</head>" +
 //                "<body>" +
 //                "<p>hello</p> " +
-//                "<p>lms website 입니다... 안녕</p>" +
+//                "<p>lms website �엯�땲�떎... �븞�뀞</p>" +
 //                "</body>" +
 //                "</html>";
 //
 //        printWriter.write(msg);
 //        printWriter.close();
 
-
-    }
+}
