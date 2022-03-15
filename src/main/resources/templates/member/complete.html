@@ -11,11 +11,12 @@
 <h1>회원가입이 완료되었습니다.</h1>
 <p>축하</p>
 </div>
-
+<div th:replace = "/fragments/layout.html :: fragment-body-menu"></div>
 
 <div th:if="${result eq false}">  
 <h1>회원가입에 실패했습니다.</h1>
 <p>죄송</p>
  </div>
+ <div th:replace = "/fragments/layout.html :: fragment-body-menu"></div>
 </body>
 </html>
