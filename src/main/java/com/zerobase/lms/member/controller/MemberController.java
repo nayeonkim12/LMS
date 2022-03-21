@@ -100,5 +100,18 @@ public String resetPasswordSubmit(Model model, ResetPasswordInput parameter) {
         
         return "member/find_password_result";
     }
-	}
+	
+	//여기서부터 내가 임의로 한거
+	  @GetMapping("/member/main.do")
+	    public String main() {
+	        
+	        return "admin/main";
+	        
+}
+	  
+	  @RequestMapping("/error/denied")
+	  public String errorDenied() {
+	  return "error/denied";
 
+}
+}

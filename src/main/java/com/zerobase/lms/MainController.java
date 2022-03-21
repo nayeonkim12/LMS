@@ -16,14 +16,11 @@ public class MainController {
 	@RequestMapping("/")
 	public String index() {
 
-
+return"index";
 		
-String email = "knyhwhw@naver.com";
-String subject = "안녕하세요 제로베이스입니다";
-String text = "<p>안녕하세요</p> <p>반갑습미다</p>";
 
-mailComponent.sendMail(email, subject, text);
-		return "index";
+
+
 		// request �뒗 �쎒�뿉�꽌 �꽌踰꾨줈
 		// response�뒗 �꽌踰꾩뿉�꽌 �쎒�쑝濡�
 	}

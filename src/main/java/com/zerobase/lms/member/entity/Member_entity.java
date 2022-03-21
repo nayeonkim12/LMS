@@ -29,6 +29,9 @@ private LocalDateTime authDT;
 
 private String resetPasswordKey;
 
+private boolean adminYn;
+
+
 }
 
 
